@@ -25,4 +25,4 @@
 ## ⚙️ **Como Instalar e Executar**
 1. Clone este repositório:
    ```bash
-   git clone 
+   git clone https://github.com/jefim9413/pingas-mobile-final.git

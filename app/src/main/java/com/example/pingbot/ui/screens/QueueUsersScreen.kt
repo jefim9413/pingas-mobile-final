@@ -76,7 +76,7 @@ fun QueueUsersScreen( navController: NavHostController) {
                     LazyColumn(
                         modifier = Modifier.fillMaxSize()
                     ) {
-                        items(Users) { user ->
+                        items(Users.drop(2)) { user ->
                             UserCard(userName = user.name)
                             Spacer(modifier = Modifier.height(8.dp))
                         }

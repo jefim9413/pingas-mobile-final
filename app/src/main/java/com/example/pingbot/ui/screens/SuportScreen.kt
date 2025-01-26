@@ -17,6 +17,7 @@ import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.pingbot.ui.components.DrawerMenu
@@ -66,7 +67,8 @@ fun FaqScreen(navController: NavHostController) {
                     Text(
                         text = "Perguntas Frequentes",
                         style = MaterialTheme.typography.titleLarge,
-                        modifier = Modifier.padding(bottom = 8.dp)
+                        modifier = Modifier.padding(bottom = 8.dp),
+                        color = Color.White
                     )
 
                     LazyColumn(

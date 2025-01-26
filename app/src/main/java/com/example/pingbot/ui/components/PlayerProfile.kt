@@ -1,6 +1,7 @@
 package com.example.pingbot.ui.components
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
@@ -24,6 +25,7 @@ fun PlayerProfile(
     player: User,
     size : Int? = 50,
     showName: Boolean? = true,
+    modifier: Modifier? = null
 ) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally
@@ -34,6 +36,8 @@ fun PlayerProfile(
                 contentDescription = "Imagem de ${player.name}",
                 modifier = Modifier
                     .size(size.dp)
+                    .clickable {
+                    }
             )
         }
 

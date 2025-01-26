@@ -36,7 +36,7 @@ fun QuestionItem(question: String, answer: String) {
                 shape = RoundedCornerShape(8.dp)
             )
             .clickable { expanded = !expanded }
-            .padding(18.dp),
+            .padding(12.dp),
         verticalArrangement = Arrangement.spacedBy(4.dp)
 
     ) {
@@ -49,9 +49,7 @@ fun QuestionItem(question: String, answer: String) {
             Icon(
                 imageVector = Icons.Default.Info,
                 contentDescription = null,
-                tint = if (expanded) Color.Black else MaterialTheme.colorScheme.onSurface.copy(
-                    alpha = 0.6f
-                ),
+                tint = Color.White,
             )
 
             Spacer(
@@ -61,7 +59,7 @@ fun QuestionItem(question: String, answer: String) {
             Text(
                 text = question,
                 style = MaterialTheme.typography.bodyMedium,
-                color = Color.Black,
+                color = Color.White,
                 modifier = Modifier.fillMaxWidth()
             )
         }
@@ -70,7 +68,7 @@ fun QuestionItem(question: String, answer: String) {
             Text(
                 text = answer,
                 style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onSurface,
+                color = Color.White,
                 fontWeight = MaterialTheme.typography.bodyMedium.fontWeight,
                 modifier = Modifier.padding(top = 8.dp)
             )

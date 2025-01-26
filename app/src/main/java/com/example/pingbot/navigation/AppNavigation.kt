@@ -1,5 +1,10 @@
 package com.example.pingbot.navigation
 
+import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInHorizontally
+import androidx.compose.animation.slideOutHorizontally
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.navigation.NavHostController
@@ -37,19 +42,29 @@ fun AppNavigation (
             )
         }
 
-        composable(route = "home") {
+        composable(
+            route = "home",
+            enterTransition = { slideInHorizontally(tween(500)) },
+            exitTransition = { slideOutHorizontally(tween(500)) }
+        ) {
             HomeScreen(
                 navController = navController
             )
         }
 
-        composable(route = "current") {
+        composable(
+            route = "current",
+            enterTransition = { fadeIn(tween(500)) },
+            exitTransition = { fadeOut(tween(500)) }) {
             CurrentGameScreen(
                 navController = navController
             )
         }
 
-        composable(route = "faq") {
+        composable(
+            route = "faq",
+            enterTransition = { fadeIn(tween(500)) },
+            exitTransition = { fadeOut(tween(500)) }) {
             FaqScreen(
                 navController = navController
             )
@@ -78,12 +93,19 @@ fun AppNavigation (
                 navController = navController
             )
         }
-        composable(route = "gamesList") {
+        composable(
+            route = "gamesList",
+            enterTransition = { slideInHorizontally(tween(500)) },
+            exitTransition = { slideOutHorizontally(tween(500)) }) {
             GamesListScreen(
                 navController = navController
             )
         }
-        composable(route = "queueUsers") {
+        composable(
+            route = "queueUsers",
+            enterTransition = { slideInHorizontally(tween(500)) },
+            exitTransition = { slideOutHorizontally(tween(500)) }
+        ) {
             QueueUsersScreen(
                 navController = navController
             )

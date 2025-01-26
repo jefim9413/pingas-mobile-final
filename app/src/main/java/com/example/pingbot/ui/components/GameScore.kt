@@ -1,5 +1,6 @@
 package com.example.pingbot.ui.components
 
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -17,8 +18,9 @@ import com.example.pingbot.data.datasource.Game
 import com.example.pingbot.data.datasource.Users
 import com.example.pingbot.ui.theme.Digital
 
+
 @Composable
-fun GameScore(game: Game? = null) {
+fun GameScore(game: Game) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
@@ -40,9 +42,12 @@ fun GameScore(game: Game? = null) {
             ) {
 
                 PlayerProfile(
-                    Users[0],
-                    120
-                )
+                    game.player1,
+                    120,
+                    modifier = Modifier
+                        .clickable {
+                        }
+                    )
                 Text(
                     text = "VS",
                     color = Color.White,
@@ -50,8 +55,8 @@ fun GameScore(game: Game? = null) {
                     fontWeight = FontWeight.Bold
                 )
                 PlayerProfile(
-                    Users[2],
-                    120
+                    game.player2,
+                    120,
                 )
             }
         }
@@ -64,7 +69,7 @@ fun GameScore(game: Game? = null) {
         ) {
 
             Text(
-                text = "10 - 5",
+                text = "${game.score1} - ${game.score2}",
                 color = Color.White,
                 fontFamily = Digital,
                 fontSize = 94.sp,

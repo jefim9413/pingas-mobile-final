@@ -2,12 +2,12 @@ package com.example.pingbot.data.datasource
 
 data class Game(
     val id: Int,
-    val player1: User,
-    val player2: User,
-    val score1: Int,
-    val score2: Int,
-    val warmup: Boolean? = false,
-    val winner: User? = null
+    var player1: User,
+    var player2: User,
+    var score1: Int,
+    var score2: Int,
+    var warmup: Boolean? = false,
+    var winner: User? = null
 )
 
 val currentMatchMock = Game(
